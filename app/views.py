@@ -1,7 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, session, url_for, g
 from functools import wraps
 import sqlite3
-from forms import AddTaskForm
+from forms import ProposeNewHangout
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -54,7 +54,7 @@ def tasks():
 	g.db.close()
 	return render_template(
 		'tasks.html',
-		form = AddTaskForm(request.form),
+		form = ProposeNewHangout(request.form),
 		open_tasks=open_tasks,
 		closed_tasks=closed_tasks
 	)
