@@ -7,10 +7,5 @@ with sqlite3.connect(DATABASE_PATH) as connection:
 
 	c.execute("""CREATE TABLE hangout( hangout_id INTEGER PRIMARY KEY
 		AUTOINCREMENT,
-		title TEXT NOT NULL, level TEXT NOT NULL, language TEXT NOT NULL, hangout_date DATE NOT NULL, description TEXT NOT NULL)""")
+		title TEXT NOT NULL, level TEXT NOT NULL, language TEXT NOT NULL, hangout_date DATE NOT NULL, description TEXT NOT NULL, status INTEGER NOT NULL)""")
 
-	# c.execute(
-	# 	'INSERT INTO hangout(title, level, language, hangout_date, description)'
-	# 	'VALUES("Python Flask hangout", "10/2014", 10, )'
-	# )
-	# 
