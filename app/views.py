@@ -42,16 +42,17 @@ def login():
 @app.route('/hangout/')
 @login_required
 def hangout():
-	g.db = connect_db()
+	g.db = connect_db() 
+
 	cur = g.db.execute(
-		'select title, hangout_date, level, language, description from hangout where status=1')
-	upcoming_hangouts = [dict(title=row[0], hangout_date=row[1],
-		level=row[2], language=row[3], description=row[4]) for row in cur.fetchall()]
+		'select title, level, language, hangout_date, description, hangout_id from hangout where status=1')
+	upcoming_hangouts = [dict(title=row[0], level=row[1],
+		language=row[2], hangout_date=row[3], description=row[4], hangout_id=row[5]) for row in cur.fetchall()]
 	
 	cur = g.db.execute(
-		'select title, hangout_date, level, language, description from hangout where status=0')
-	previous_hangouts = [dict(title=row[0], hangout_date=row[1],
-		level=row[2], language=row[3], description=row[4]) for row in cur.fetchall()]
+		'select title, hangout_date, level, language, description, hangout_id from hangout where status=0')
+	previous_hangouts = [dict(title=row[0], level=row[1],
+		language=row[2], hangout_date=row[3], description=row[4], hangout_id=row[5]) for row in cur.fetchall()]
 	
 	g.db.close()
 	return render_template(
@@ -75,7 +76,7 @@ def new_hangout():
 		flash("All fields are required. Please try again.")
 		return redirect(url_for('hangout'))
 	else:
-		g.db.execute('INSERT into hangout (title, hangout_date, level, language, description) values (?, ?, ?, ?, ?, 1)', [request.form['title'], request.form['level'],request.form['language'],request.form['hangout_date'], request.form['description'], request.form['status']])
+		g.db.execute('INSERT into hangout (title, level, language, hangout_date, description, status) values (?, ?, ?, ?, ?, 1)', [request.form['title'], request.form['level'],request.form['language'],request.form['hangout_date'], request.form['description']])
 		g.db.commit()
 		g.db.close()
 		flash('New entry was successfully posted. Thanks.')

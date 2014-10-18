@@ -5,11 +5,17 @@
 	<div class="add-task">
 		<h3>Propose a new hangout:</h3>
 	<table>
+<!-- 
+			title = request.form['title']
+	date = request.form['hangout_date']
+	level = request.form['level']
+	language = request.form['language']
+	description = request.form['description'] -->
 		<tr>
 			<form action="{{ url_for('new_hangout')}}" method="post">
 				<td>
 					<label>Hangout Title:</label>
-					<input name="name" type="text">
+					<input name="title" type="text">
 				</td>
 				<p>
 					<td>
@@ -29,6 +35,9 @@
 				<option value="2">Intermediate</option>
 				<option value="3">Advanced</option>
 			</select>
+			<textarea name="description">
+				aksdfjasdf
+			</textarea>
 		</td>
 		<td>
 			&nbsp;
@@ -47,19 +56,19 @@
 	<table>
 		<thead>
 			<tr>
-				<th width="300px"><strong>Task Name</strong></th>
-				<th width="100px"><strong>Due Date</strong></th>
-				<th width="50px"><strong>Priority</strong></th>
+				<th width="300px"><strong>Hangout Title</strong></th>
+				<th width="100px"><strong>Hangout Date</strong></th>
+				<th width="50px"><strong>Level</strong></th>
 			</tr>
 		</thead>
 	{% for o in open_tasks %}
 	<tr>
-		<td width="300px">{{ o.name }} </td>
-		<td width="100px">{{ o.due_date }}</td>
-		<td width="50px">{{ o.priority }}</td>
+		<td width="300px">{{ o.title }} </td>
+		<td width="100px">{{ o.hangout_date }}</td>
+		<td width="50px">{{ o.level }}</td>
 	<td>
-		<a href="{{ url_for('delete_entry', task_id = o.task_id) }}">Delete</a>
-		<a href="{{ url_for('complete', task_id = o.task_id)}}">Mark as Complete</a>
+		<a href="{{ url_for('delete_entry', hangout_id = o.hangout_id) }}">Delete</a>
+		<a href="{{ url_for('complete', hangout_id = o.hangout_id)}}">Mark as Complete</a>
 	</td>
 </tr>
 {% endfor %}
@@ -89,7 +98,7 @@
 			<td width="100px"> {{ c.due_date }}</td>
 			<td width="50px"> {{ c.priority }}</td>
 		<td>
-			<a href="{{ url_for('delete_entry', task_id = c.task_id) }}">Delete</a>
+			<a href="{{ url_for('delete_entry', hangout_id = c.hangout_id) }}">Delete</a>
 		</td>
 	</tr>
 {% endfor %}
