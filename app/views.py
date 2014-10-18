@@ -1,7 +1,9 @@
 from flask import Flask, flash, redirect, render_template, request, session, url_for, g
 from functools import wraps
 import sqlite3
+
 from forms import ProposeNewHangout
+
 
 app = Flask(__name__)
 app.config.from_object('config')
