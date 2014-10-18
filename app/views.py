@@ -75,30 +75,30 @@ def new_hangout():
 		flash("All fields are required. Please try again.")
 		return redirect(url_for('hangout'))
 	else:
-		g.db.execute('INSERT into hangout (title, hangout_date, level, language, description) values (?, ?, ?, ?, ?, 1)', [request.form['title'], request.form['hangout_date'],request.form['level'],request.form ['language'], request.form['description']])
+		g.db.execute('INSERT into hangout (title, hangout_date, level, language, description) values (?, ?, ?, ?, ?, 1)', [request.form['title'], request.form['level'],request.form['language'],request.form['hangout_date'], request.form['description'], request.form['status']])
 		g.db.commit()
 		g.db.close()
 		flash('New entry was successfully posted. Thanks.')
 		return redirect(url_for('hangout'))
 
 #Mark tasks as complete
-@app.route('/complete/<int:task_id>/',)
+@app.route('/complete/<int:hangout_id>/',)
 @login_required
-def complete(task_id):
+def complete(hangout_id):
 	g.db = connect_db()
 	g.db.execute(
-		'UPDATE tasks set status = 0 where task_id='+str(task_id)
+		'UPDATE tasks set status = 0 where hangout_id='+str(hangout_id)
 	)
 	g.db.commit()
 	g.db.close()
 	flash('The task was marked as complete.')
 	return redirect(url_for('hangout'))
 
-@app.route('/delete/<int:task_id>/',)
+@app.route('/delete/<int:hangout_id>/',)
 @login_required
-def delete_entry(task_id):
+def delete_entry(hangout_id):
 	g.db = connect_db()
-	g.db.execute('delete from hangout where task_id='+ str(task_id))
+	g.db.execute('delete from hangout where hangout_id='+ str(hangout_id))
 	g.db.commit()
 	g.db.close()
 	flash('The task was deleted.')
