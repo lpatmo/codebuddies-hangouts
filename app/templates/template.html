@@ -6,10 +6,69 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
 	</head>
-	<body>
+	<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+		 <nav class="navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="heavy" href="#page-top">
+                      <span class="light"><i class="fa fa-code"></i> Code<span class="green">Buddies.org</span></span> 
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#studygroups">Study Groups</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#faq">FAQ</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="http://bit.ly/10HTO4w" target="_blank">Blog</a>
+                    </li>
+                   
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+     <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="intro-text"><h1>Running partners... 
+for people studying web development</h1>
+
+                                             <p>Stay motivated and learn faster with peers. </p>
+
+                        
+
+                        </div>
+                       
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 col-offset-6">
+				<div class="col-md-8 col-md-offset-2">
 			{% for message in get_flashed_messages() %}
 			<div class="flash">{{message}}</div>
 		{% endfor %}
