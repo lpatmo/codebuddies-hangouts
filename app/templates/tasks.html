@@ -36,7 +36,8 @@
 
 				<div class="form-group">
 					<p>
-					<textarea name="description" class="form-control" placeholder="description">
+						<label>What do you want to accomplish during the hangout?</label>
+					<textarea name="description" class="form-control" placeholder="Our goal is to...">
 						
 					</textarea>
 				</p>
@@ -61,6 +62,9 @@
 				<th width="300px"><strong>Title</strong></th>
 				<th width="100px"><strong>Hangout Date</strong></th>
 				<th width="50px"><strong>Level</strong></th>
+				<th width="50px"><strong>Language</strong></th>
+				<th width="50px"><strong>Description</strong></th>
+				<th width="50px"><strong>Status</strong></th>
 			</tr>
 		</thead>
 	{% for o in open_tasks %}
@@ -68,8 +72,8 @@
 		<td width="300px">{{ o.title }} </td>
 		<td width="100px">{{ o.hangout_date }}</td>
 		<td width="50px">{{ o.level }}</td>
-		<td width="50px">{{ o.level }}</td>
-		<td width="50px">{{ o.level }}</td>
+		<td width="50px">{{ o.language }}</td>
+		<td width="50px">{{ o.description }}</td>
 	<td>
 		<a href="{{ url_for('delete_entry', hangout_id = o.hangout_id) }}">Delete</a>
 		<a href="{{ url_for('complete', hangout_id = o.hangout_id)}}">Mark as Complete</a>

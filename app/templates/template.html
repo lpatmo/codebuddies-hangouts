@@ -7,7 +7,9 @@
 
 	</head>
 	<body>
-		<div class="page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-offset-6">
 			{% for message in get_flashed_messages() %}
 			<div class="flash">{{message}}</div>
 		{% endfor %}
@@ -18,7 +20,9 @@
 		{% block content %}
 		{% endblock %}
 
-		</div>
+			</div>
+			</div><!--row-->
+		</div><!--container-->
 
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
    		 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
