@@ -1,33 +1,33 @@
 {% extends "template.html" %}
 {% block content %}
-	<h1>Welcome to FlaskTaskr</h1>
+	<h1>CodeBuddies - Propose a Hangout</h1>
 	<a href="/logout">Logout</a>
 	<div class="add-task">
-		<h3>Add a new tasks:</h3>
+		<h3>Propose a new hangout:</h3>
 	<table>
 		<tr>
 			<form action="{{ url_for('new_task')}}" method="post">
 				<td>
-					<label>Task Name:</label>
+					<label>Hangout Title:</label>
 					<input name="name" type="text">
 				</td>
-				<td>
-					<label>Due Date (mm/dd/yyyy):</label>
-				<input name="due_date" type="text" width="120px">
-			</td>
+				<p>
+					<td>
+						<label>Hangout Time:</label>
+					<input name="hangout_date" type="text" width="120px">
+					</td>
+				</p>
 			<td>
-				<label>Priority:</label>
-				<select name="priority" width="100px">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
+				<label>Level:</label>
+			<select name="level" width="100px">
+				<option value="1">Beginner</option>
+				<option value="2">Intermediate</option>
+				<option value="3">Advanced</option>
+			</select>
+			<select name="level" width="100px">
+				<option value="1">Beginner</option>
+				<option value="2">Intermediate</option>
+				<option value="3">Advanced</option>
 			</select>
 		</td>
 		<td>
