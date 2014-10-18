@@ -90,7 +90,7 @@ def new_hangout():
 def complete(hangout_id):
 	g.db = connect_db()
 	g.db.execute(
-		'UPDATE tasks set status = 0 where hangout_id='+str(hangout_id)
+		'UPDATE hangout set status = 0 where hangout_id='+str(hangout_id)
 	)
 	g.db.commit()
 	g.db.close()

@@ -20,6 +20,11 @@ h2 {
 	font-size: 1.5em;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 .page {
 	margin: 2em auto;
 	width: 50em;
@@ -32,6 +37,7 @@ h2 {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	clear: both;
 }
 
 .entries li {

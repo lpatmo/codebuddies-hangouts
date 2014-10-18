@@ -4,50 +4,53 @@
 	<a href="/logout">Logout</a>
 	<div class="add-task">
 		<h3>Propose a new hangout:</h3>
-	<table>
-<!-- 
-			title = request.form['title']
-	date = request.form['hangout_date']
-	level = request.form['level']
-	language = request.form['language']
-	description = request.form['description'] -->
-		<tr>
 			<form action="{{ url_for('new_hangout')}}" method="post">
-				<td>
-					<label>Hangout Title:</label>
-					<input name="title" type="text">
-				</td>
-				<p>
-					<td>
-						<label>Hangout Time:</label>
-					<input name="hangout_date" type="text" width="120px">
-					</td>
+				<div class="form-group">
+					<label for="inputTitle">Title:</label>
+					<input name="title" type="text" class="form-control" placeholder="Let's study Chapter 5 of Eloquent Javascript" id="inputTitle">
+				
+				</div>
+				<div class="form-group">
+					<label for="inputDate">Time:</label>
+					<input name="hangout_date" type="text" class="form-control" placeholder="e.g. Friday, 10/8 8-10pm EST" id="inputDate">
+				</div>
+				<div class="form-group">
+					<label>Level:</label>
+					<select name="level" width="100px">
+						<option value="1">Beginner</option>
+						<option value="2">Intermediate</option>
+						<option value="3">Advanced</option>
+					</select>
+				
+				
+					<label>Tag:</label>
+					<select name="language" width="100px">
+						<option value="1">Javascript</option>
+						<option value="2">HTML/CSS</option>
+						<option value="3">Python</option>
+						<option value="3">Ruby on Rails</option>
+						<option value="3">Git</option>
+						<option value="3">Data Structures and Algorithms</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<p>
+						<label>What do you want to accomplish during the hangout?</label>
+					<textarea name="description" class="form-control" placeholder="Our goal is to...">
+						
+					</textarea>
 				</p>
-			<td>
-				<label>Level:</label>
-			<select name="level" width="100px">
-				<option value="1">Beginner</option>
-				<option value="2">Intermediate</option>
-				<option value="3">Advanced</option>
-			</select>
-			<select name="language" width="100px">
-				<option value="1">Beginner</option>
-				<option value="2">Intermediate</option>
-				<option value="3">Advanced</option>
-			</select>
-			<textarea name="description">
-				aksdfjasdf
-			</textarea>
-		</td>
-		<td>
-			&nbsp;
-			&nbsp;
-		<input class="button" type="submit" value="Save">
-	</td>
-</form>
-</tr>
-</table>
-</div>
+			
+					<input class="button" type="submit" value="Save">
+				</div>
+				
+		</form>
+		
+	</div>
+
+
+
 <div class="entries">
 	<br />
 	<br />
@@ -56,9 +59,12 @@
 	<table>
 		<thead>
 			<tr>
-				<th width="300px"><strong>Hangout Title</strong></th>
+				<th width="300px"><strong>Title</strong></th>
 				<th width="100px"><strong>Hangout Date</strong></th>
 				<th width="50px"><strong>Level</strong></th>
+				<th width="50px"><strong>Language</strong></th>
+				<th width="50px"><strong>Description</strong></th>
+				<th width="50px"><strong>Status</strong></th>
 			</tr>
 		</thead>
 	{% for o in open_tasks %}
@@ -66,6 +72,8 @@
 		<td width="300px">{{ o.title }} </td>
 		<td width="100px">{{ o.hangout_date }}</td>
 		<td width="50px">{{ o.level }}</td>
+		<td width="50px">{{ o.language }}</td>
+		<td width="50px">{{ o.description }}</td>
 	<td>
 		<a href="{{ url_for('delete_entry', hangout_id = o.hangout_id) }}">Delete</a>
 		<a href="{{ url_for('complete', hangout_id = o.hangout_id)}}">Mark as Complete</a>
