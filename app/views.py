@@ -35,7 +35,7 @@ def login():
 		    return render_template('login.html', error=error)
 		else:
 			session['logged_in'] = True
-			return redirect(url_for('tasks'))
+			return redirect(url_for('hangout'))
 	if request.method == 'GET':
 		return render_template('login.html')
 
@@ -92,16 +92,16 @@ def complete(task_id):
 	g.db.commit()
 	g.db.close()
 	flash('The task was marked as complete.')
-	return redirect(url_for('tasks'))
+	return redirect(url_for('hangout'))
 
 @app.route('/delete/<int:task_id>/',)
 @login_required
 def delete_entry(task_id):
 	g.db = connect_db()
-	g.db.execute('delete from tasks where task_id='+ str(task_id))
+	g.db.execute('delete from hangout where task_id='+ str(task_id))
 	g.db.commit()
 	g.db.close()
 	flash('The task was deleted.')
-	return redirect(url_for('tasks'))
+	return redirect(url_for('hangout'))
 
 
