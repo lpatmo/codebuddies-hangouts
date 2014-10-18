@@ -39,9 +39,9 @@ def login():
 	if request.method == 'GET':
 		return render_template('login.html')
 
-@app.route('/tasks/')
+@app.route('/hangout/')
 @login_required
-def tasks():
+def hangout():
 	g.db = connect_db()
 	cur = g.db.execute(
 		'select title, hangout_date, level, language, description from hangout where status=1')
@@ -63,20 +63,23 @@ def tasks():
 
 @app.route('/add/', methods = ['POST'])
 @login_required
-def new_task():
+def new_hangout():
 	g.db = connect_db()
-	name = request.form['name']
-	date = request.form['due_date']
-	priority = request.form['priority']
-	if not name or not date or not priority:
+	title = request.form['title']
+	date = request.form['hangout_date']
+	level = request.form['level']
+	language = request.form['language']
+	description = request.form['description']
+
+	if not title or not date or not level or not language or not description:
 		flash("All fields are required. Please try again.")
-		return redirect(url_for('tasks'))
+		return redirect(url_for('hangout'))
 	else:
-		g.db.execute('INSERT into tasks (name, due_date, priority, status) values (?, ?, ?, 1)', [request.form['name'], request.form['due_date'],request.form['priority']])
+		g.db.execute('INSERT into hangout (title, hangout_date, level, language, description) values (?, ?, ?, ?, ?, 1)', [request.form['title'], request.form['hangout_date'],request.form['level'],request.form ['language'], request.form['description']])
 		g.db.commit()
 		g.db.close()
 		flash('New entry was successfully posted. Thanks.')
-		return redirect(url_for('tasks'))
+		return redirect(url_for('hangout'))
 
 #Mark tasks as complete
 @app.route('/complete/<int:task_id>/',)
