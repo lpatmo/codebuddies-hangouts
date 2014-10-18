@@ -5,15 +5,12 @@ from config import DATABASE_PATH
 with sqlite3.connect(DATABASE_PATH) as connection:
 	c = connection.cursor()
 
-	c.execute("""CREATE TABLE tasks(task_id INTEGER PRIMARY KEY
+	c.execute("""CREATE TABLE hangout( hangout_id INTEGER PRIMARY KEY
 		AUTOINCREMENT,
-		name TEXT NOT NULL, due_date TEXT NOT NULL, priority INTEGER NOT NULL, status INTEGER NOT NULL)""")
+		title TEXT NOT NULL, level TEXT NOT NULL, language TEXT NOT NULL, hangout_date DATE NOT NULL, description TEXT NOT NULL)""")
 
-	c.execute(
-		'INSERT INTO tasks(name, due_date, priority, status)'
-		'VALUES("Finish this tutorial", "02/03/2014", 10, 1)'
-	)
-	c.execute(
-		'INSERT INTO tasks(name, due_date, priority, status)'
-		'VALUES("Finish Real Python Course 2", "02/03/2014", 10, 1)'
-	)
+	# c.execute(
+	# 	'INSERT INTO hangout(title, level, language, hangout_date, description)'
+	# 	'VALUES("Python Flask hangout", "10/2014", 10, )'
+	# )
+	# 
