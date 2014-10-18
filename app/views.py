@@ -44,21 +44,21 @@ def login():
 def tasks():
 	g.db = connect_db()
 	cur = g.db.execute(
-		'select name, due_date, priority, task_id from tasks where status=1')
-	open_tasks = [dict(name=row[0], due_date=row[1],
-		priority=row[2], task_id=row[3]) for row in cur.fetchall()]
+		'select title, hangout_date, level, language, description from hangout where status=1')
+	upcoming_hangouts = [dict(title=row[0], hangout_date=row[1],
+		level=row[2], language=row[3], description=row[4]) for row in cur.fetchall()]
 	
 	cur = g.db.execute(
-		'select name, due_date, priority, task_id from tasks where status=0')
-	closed_tasks = [dict(name=row[0], due_date=row[1], 
-		priority=row[2], task_id=row[3]) for row in cur.fetchall()]
+		'select title, hangout_date, level, language, description from hangout where status=0')
+	previous_hangouts = [dict(title=row[0], hangout_date=row[1],
+		level=row[2], language=row[3], description=row[4]) for row in cur.fetchall()]
 	
 	g.db.close()
 	return render_template(
 		'tasks.html',
 		form = ProposeNewHangout(request.form),
-		open_tasks=open_tasks,
-		closed_tasks=closed_tasks
+		open_tasks=upcoming_hangouts,
+		closed_tasks=previous_hangouts
 	)
 
 @app.route('/add/', methods = ['POST'])
