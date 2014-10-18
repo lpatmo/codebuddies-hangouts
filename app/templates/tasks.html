@@ -4,50 +4,43 @@
 	<a href="/logout">Logout</a>
 	<div class="add-task">
 		<h3>Propose a new hangout:</h3>
-	<table>
-<!-- 
-			title = request.form['title']
-	date = request.form['hangout_date']
-	level = request.form['level']
-	language = request.form['language']
-	description = request.form['description'] -->
-		<tr>
-			<form action="{{ url_for('new_hangout')}}" method="post">
-				<td>
-					<label>Hangout Title:</label>
-					<input name="title" type="text">
-				</td>
+			<form action="{{ url_for('new_hangout')}}" method="post" class="navbar-form">
+				<div class="form-group">
 				<p>
-					<td>
-						<label>Hangout Time:</label>
-					<input name="hangout_date" type="text" width="120px">
-					</td>
+					<label>Hangout Title:</label>
+					<input name="title" type="text" class="form-control" placeholder="Let's study Chapter 5 of Eloquent Javascript">
+					</label>
 				</p>
-			<td>
-				<label>Level:</label>
-			<select name="level" width="100px">
-				<option value="1">Beginner</option>
-				<option value="2">Intermediate</option>
-				<option value="3">Advanced</option>
-			</select>
-			<select name="language" width="100px">
-				<option value="1">Beginner</option>
-				<option value="2">Intermediate</option>
-				<option value="3">Advanced</option>
-			</select>
-			<textarea name="description">
-				aksdfjasdf
-			</textarea>
-		</td>
-		<td>
-			&nbsp;
-			&nbsp;
-		<input class="button" type="submit" value="Save">
-	</td>
-</form>
-</tr>
-</table>
-</div>
+				<p>
+					<label>Hangout Time:</label>
+					<input name="hangout_date" type="text" class="form-control" placeholder="9-10pm EST">
+				</p>
+				<p>
+					<label>Level:</label>
+					<select name="level" width="100px">
+						<option value="1">Beginner</option>
+						<option value="2">Intermediate</option>
+						<option value="3">Advanced</option>
+					</select>
+					<select name="language" width="100px">
+						<option value="1">Javascript</option>
+						<option value="2">HTML/CSS</option>
+						<option value="3">Python</option>
+						<option value="3">Ruby on Rails</option>
+					</select>
+					<textarea name="description" class="form-control">
+						Description
+					</textarea>
+		
+					<input class="button" type="submit" value="Save">
+				</p>
+				</div>
+		</form>
+		
+	</div>
+
+
+
 <div class="entries">
 	<br />
 	<br />
@@ -56,7 +49,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th width="300px"><strong>Hangout Title</strong></th>
+				<th width="300px"><strong>Title</strong></th>
 				<th width="100px"><strong>Hangout Date</strong></th>
 				<th width="50px"><strong>Level</strong></th>
 			</tr>
