@@ -12,12 +12,21 @@ h1, h2 {
 	margin: 0;
 }
 
-h1 {
-	border-bottom: 2px solid #eee;
-}
-
 h2 {
 	font-size: 1.5em;
+}
+
+a.propose {
+	margin-top: 20px;
+	width: 25%;
+float: right;
+color: black;
+font-weight: 700;
+}
+
+.add-hangout {
+	margin-top: 20px;
+	clear: both;	
 }
 
 .col-centered{
@@ -403,13 +412,13 @@ li.page-scroll a#about {
     background-color: transparent;
 }
 
-.btn-default:hover,
+/*.btn-default:hover,
 .btn-default:focus {
     border: 1px solid #28c3ab;
     outline: 0;
     color: #000;
     background-color: #28c3ab;
-}
+}*/
 
 
 .btn-circle {

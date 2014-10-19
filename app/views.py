@@ -1,6 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, session, url_for, g
 from functools import wraps
 import sqlite3
+import collections
 	
 from forms import ProposeNewHangout
 
@@ -51,8 +52,8 @@ def hangout():
 	
 	cur = g.db.execute(
 		'select title, hangout_date, level, language, description, hangout_id from hangout where status=0')
-	previous_hangouts = [dict(title=row[0], level=row[1],
-		language=row[2], hangout_date=row[3], description=row[4], hangout_id=row[5]) for row in cur.fetchall()]
+	previous_hangouts = [collections.OrderedDict(title=row[0], hangout_date=row[1],
+		level=row[2], language=row[3], description=row[4], hangout_id=row[5]) for row in cur.fetchall()]
 
 	
 	g.db.close()

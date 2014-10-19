@@ -1,12 +1,12 @@
 {% extends "template.html" %}
 {% block content %}
-	
+	<div>
+	<a class="btn button propose" data-toggles=".toggleForm">Propose a hangout</a>
 
-	<div class="add-task">
-		<h3>Propose a new hangout:</h3>
+	<div class="add-hangout toggleForm" style="display: none;">
 			<form action="{{ url_for('new_hangout')}}" method="post">
 				<div class="form-group">
-					<label for="inputTitle">Title:</label>
+					<label for="inputTitle">Hangout Title:</label>
 					<input name="title" type="text" class="form-control" placeholder="Let's study Chapter 5 of Eloquent Javascript" id="inputTitle">
 				
 				</div>
@@ -15,9 +15,9 @@
 					<input name="hangout_date" type="text" class="form-control" placeholder="e.g. Friday, 10/8 8-10pm EST" id="inputDate">
 
 				</div>
-				<div class="form-group">
+				<div class="form-inline">
 					<label>Level:</label>
-					<select name="level" width="100px">
+					<select name="level" width="100px" class="form-control">
 						<option value="Beginner">Beginner</option>
 						<option value="Intermediate">Intermediate</option>
 						<option value="Advanced">Advanced</option>
@@ -25,7 +25,7 @@
 				
 				
 					<label>Tag:</label>
-					<select name="language" width="100px">
+					<select name="language" width="100px" class="form-control">
 						<option value="Javascript">Javascript</option>
 						<option value="HTML/CSS">HTML/CSS</option>
 						<option value="Python">Python</option>
@@ -38,12 +38,12 @@
 				<div class="form-group">
 					<p>
 						<label>What do you want to accomplish during the hangout?</label>
-					<textarea name="description" class="form-control" placeholder="Our goal is to...">
+					<textarea name="description" class="form-control">
 						
 					</textarea>
 				</p>
 			
-					<input class="button" type="submit" value="Save">
+					<input class="button btn" type="submit" value="Save">
 				</div>
 				
 		</form>
@@ -60,8 +60,8 @@
 	<table>
 		<thead>
 			<tr>
-				<th width="300px"><strong>Title</strong></th>
-				<th width="100px"><strong>Hangout Date</strong></th>
+				<th width="300px"><strong>Hangout Title</strong></th>
+				<th width="100px"><strong>Meetup Time</strong></th>
 				<th width="50px"><strong>Level</strong></th>
 				<th width="50px"><strong>Language</strong></th>
 				<th width="50px"><strong>Description</strong></th>
@@ -94,8 +94,8 @@
 		<table>
 			<thead>
 				<tr>
-					<th width="300px"><strong>Title</strong></th>
-					<th width="100px"><strong>Hangout Date</strong></th>
+					<th width="300px"><strong>Hangout Title</strong></th>
+					<th width="100px"><strong>Meetup Time</strong></th>
 					<th width="50px"><strong>Level</strong></th>
 					<th width="50px"><strong>Language</strong></th>
 					<th width="50px"><strong>Description</strong></th>
@@ -116,6 +116,7 @@
 	</tr>
 {% endfor %}
 </table>
+</div>
 </div>
 </div>
 {% endblock %}

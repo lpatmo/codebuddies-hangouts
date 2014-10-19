@@ -57,9 +57,7 @@
                         <div class="intro-text"><h1>Running partners... 
 for people studying web development</h1>
 
-                                             <p>We work through tutorials and pair program on Google Hangouts.</p>
-
-                        
+                                             <p>We work through tutorials and pair program <br />spontaneously on Google Hangouts.</p>
 
                         </div>
                        
@@ -89,8 +87,11 @@ for people studying web development</h1>
 			</div><!--row-->
 		</div><!--container-->
 
-		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		 <script src="{{ url_for('static', filename='js/jquery.min.js') }}">
    		 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   		 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+   		
+
 	</body>
 </html>
 
