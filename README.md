@@ -1,10 +1,13 @@
-Hello! Anyone can contribute to this open-sourced project that helps people schedule hangouts more easily with each other. 
+Hello! Anyone can contribute to this open-sourced project that connects people studying web development via ad-hoc google hangouts.
 
 Here's how you can set up this app on your own machine:
 
 1. Make sure python is installed on your machine.
 
+```
 2. $ sudo easy_install virtualenv
+```
+
 Install virtualenv. 
 
 3. virtualenv —-no-site-packages codebuddies-flask
