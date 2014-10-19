@@ -40,6 +40,11 @@ def login():
 	if request.method == 'GET':
 		return render_template('login.html')
 
+@app.route('/resources')
+def resources():
+	return render_template('resources.html')
+
+
 @app.route('/hangout/')
 @login_required
 def hangout():
