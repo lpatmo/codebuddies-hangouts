@@ -6,8 +6,8 @@ class ProposeNewHangout(Form):
 	hangout_id = IntegerField('Status')
 	title = TextField('title', validators=[DataRequired()])
 	hangout_date = DateField('hangout_date (mm/dd/yyyy)',validators = [DataRequired()], format='%m/%d/%Y')
-	level = SelectField('level', validators = [DataRequired()], choices = [('1', '1'), ('2', '2'), ('3', '3')])
-	language = SelectField('language', validators = [DataRequired()], choices = [('1', '1'), ('2', '2'), ('3','3'), (
-		'4', '4'), ('5', '5'), ('6', '6')])
+	level = SelectField('level', validators = [DataRequired()], choices = [('Beginner', 'Beginner'), ('Intermediate', 'Intermediate'), ('Advanced', 'Advanced')])
+	language = SelectField('language', validators = [DataRequired()], choices = [('Javascript', 'Javascript'), ('HTML/CSS', 'HTML/CSS'), ('Python','Python'), (
+		'Ruby-on-Rails', 'Ruby-on-Rails'), ('Git', 'Git'), ('Data Structures and Algorithms', 'Data Structures and Algorithms')])
 	description = TextField('description', validators = [DataRequired()])
 	status = IntegerField('Status')
