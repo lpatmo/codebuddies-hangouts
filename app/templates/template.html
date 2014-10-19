@@ -39,7 +39,12 @@
                         <a href="http://bit.ly/10HTO4w" target="_blank">Blog</a>
                     </li>
                     <li class="page-scroll">
-                    		<a href="/logout">Logout</a>
+                            {% if not session.logged_in %}
+                            <a href="{{ url_for('login') }}">Log in</a>
+                             {% else %}
+                            <a href="{{ url_for('logout') }}">Log out</a>
+                            {% endif %}
+                            
                     </li>
                    
                 </ul>
