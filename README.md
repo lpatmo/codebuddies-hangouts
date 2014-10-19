@@ -4,33 +4,43 @@ Here's how you can set up this app on your own machine:
 
 1. Make sure python is installed on your machine.
 
+2. Install virtualenv. 
 ```
-2. $ sudo easy_install virtualenv
+$ sudo easy_install virtualenv
 ```
 
-Install virtualenv. 
+3. This step creates a new python virtual environment called "codebuddies-flask"
+```
+virtualenv —-no-site-packages codebuddies-flask
+```
 
-3. virtualenv —-no-site-packages codebuddies-flask
-This step creates a new python virtual environment called "codebuddies-flask"
+4. Move into the codeboddies-flask folder you just created. 
+```
+$ cd codebuddies-flask
+```
 
-4. cd codebuddies-flask
-Move into the codeboddies-flask folder you just created. 
+5. This is what you type to activate the virtualenv. Later on, when you want to get out of the virtualenv, type $ deactivate.
 
-5. $ source bin/activate
-This is what you type to activate the virtualenv. Later on, when you want to get out of the virtualenv, type $ deactivate.
+```
+$ source bin/activate
+```
 
-6. Fork the repo by clicking on the "fork" button on the upper right-hand corner. Next, run $git clone {{PATH}} on the repo you forked. 
+6. Fork the repo by clicking on the "fork" button on the upper right-hand corner. Next, run $git clone {{PATH}}.git on the repo you forked so that you can push to your own copy of the repo on your own github profile.
 
 Now you need to install a couple of dependencies within your app. Run the following: 
 
-7. $ pip install flask==0.10.1
+```
+$ pip install flask==0.10.1
 
-8. $ pip install wtforms
+$ pip install wtforms
 
-9. $ pip install flask_wtf
+$ pip install flask_wtf
 
-10. $ cd app
+$ cd app
 
-11. $ python run.py
+$ python run.py
+```
 
-Remember to run $ git pull frequently. Please submit a pull request if you have any changes. 
+Remember to run ```$ git pull``` frequently. Please submit a pull request if you'd like to submit any changes.
+
+Join the community at codebuddies.org if you run into any trouble. The project is all organized by volunteers. :)
