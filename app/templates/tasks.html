@@ -76,8 +76,8 @@
 		<td width="50px">{{ o.language }}</td>
 		<td width="50px">{{ o.description }}</td>
 	<td>
-		<a href="{{ url_for('delete_entry', hangout_id = o.hangout_id) }}">Delete</a>
-		<a href="{{ url_for('complete', hangout_id = o.hangout_id)}}">Mark as Complete</a>
+		<a href="{{ url_for('delete_entry', hangout_id = o.hangout_id) }}"><i class="fa fa-times"></i></a>
+		<a href="{{ url_for('complete', hangout_id = o.hangout_id)}}"><i class="fa fa-check"></i></a>
 	</td>
 </tr>
 {% endfor %}
@@ -111,7 +111,7 @@
 		<td width="50px">{{ c.language }}</td>
 		<td width="50px">{{ c.description }}</td>
 		<td>
-			<a href="{{ url_for('delete_entry', hangout_id = c.hangout_id) }}">Delete</a>
+			<a href="{{ url_for('delete_entry', hangout_id = c.hangout_id) }}"><i class="fa fa-times"></i></a>
 		</td>
 	</tr>
 {% endfor %}

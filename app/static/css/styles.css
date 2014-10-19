@@ -420,7 +420,14 @@ li.page-scroll a#about {
     background-color: #28c3ab;
 }*/
 
-
+.fa-times {
+	color: red;
+	font-size: 22px;
+}
+.fa-check {
+	color: green;
+	font-size: 22px;
+}
 .btn-circle {
     width: 70px;
     height: 70px;
