@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Welcome to FlaskTaskr!!</title>
+		<title>CodeBuddies.org</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+		 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -25,9 +28,7 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#studygroups">Study Groups</a>
-                    </li>
+                   
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
@@ -36,6 +37,9 @@
                     </li>
                     <li class="page-scroll">
                         <a href="http://bit.ly/10HTO4w" target="_blank">Blog</a>
+                    </li>
+                    <li class="page-scroll">
+                    		<a href="/logout">Logout</a>
                     </li>
                    
                 </ul>
@@ -53,7 +57,7 @@
                         <div class="intro-text"><h1>Running partners... 
 for people studying web development</h1>
 
-                                             <p>Stay motivated and learn faster with peers. </p>
+                                             <p>We work through tutorials and pair program on Google Hangouts.</p>
 
                         
 
@@ -69,6 +73,8 @@ for people studying web development</h1>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
+
+
 			{% for message in get_flashed_messages() %}
 			<div class="flash">{{message}}</div>
 		{% endfor %}

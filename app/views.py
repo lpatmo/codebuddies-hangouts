@@ -45,7 +45,6 @@ def hangout():
 	g.db = connect_db() 
 
 	cur = g.db.execute(
-
 		'select title, level, language, hangout_date, description, hangout_id from hangout where status=1')
 	upcoming_hangouts = [dict(title=row[0], level=row[1],
 		language=row[2], hangout_date=row[3], description=row[4], hangout_id=row[5]) for row in cur.fetchall()]

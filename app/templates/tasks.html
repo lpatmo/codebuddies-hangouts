@@ -1,7 +1,7 @@
 {% extends "template.html" %}
 {% block content %}
 	
-	<a href="/logout">Logout</a>
+
 	<div class="add-task">
 		<h3>Propose a new hangout:</h3>
 			<form action="{{ url_for('new_hangout')}}" method="post">
@@ -13,6 +13,7 @@
 				<div class="form-group">
 					<label for="inputDate">Time:</label>
 					<input name="hangout_date" type="text" class="form-control" placeholder="e.g. Friday, 10/8 8-10pm EST" id="inputDate">
+
 				</div>
 				<div class="form-group">
 					<label>Level:</label>
@@ -93,18 +94,22 @@
 		<table>
 			<thead>
 				<tr>
-					<th width="300px"><strong>Task Name</strong></th>
-					<th width="100px"><strong>Due Date</strong></th>
-					<th width="50px"><strong>Priority</strong></th>
-					<th><strong>Actions</strong></th>
+					<th width="300px"><strong>Title</strong></th>
+					<th width="100px"><strong>Hangout Date</strong></th>
+					<th width="50px"><strong>Level</strong></th>
+					<th width="50px"><strong>Language</strong></th>
+					<th width="50px"><strong>Description</strong></th>
+					<th width="50px"><strong>Status</strong></th>
 				</tr>
 			</thead>
 
 		{% for c in closed_tasks %}
 		<tr>
-			<td width="300px"> {{ c.name }}</td>
-			<td width="100px"> {{ c.due_date }}</td>
-			<td width="50px"> {{ c.priority }}</td>
+			<td width="300px"> {{ c.title }}</td>
+				<td width="100px">{{ c.hangout_date }}</td>
+		<td width="50px">{{ c.level }}</td>
+		<td width="50px">{{ c.language }}</td>
+		<td width="50px">{{ c.description }}</td>
 		<td>
 			<a href="{{ url_for('delete_entry', hangout_id = c.hangout_id) }}">Delete</a>
 		</td>
