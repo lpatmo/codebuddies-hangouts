@@ -14,9 +14,9 @@ Here's how you can set up this app on your own machine:
 $ sudo easy_install virtualenv
 ```
 
-####This step creates a new python virtual environment called "codebuddies-flask."
+####This next step creates a new python virtual environment called "codebuddies-flask."
 ```
-virtualenv —-no-site-packages codebuddies-flask
+$ virtualenv —-no-site-packages codebuddies-flask
 ```
 
 ####Move into the codeboddies-flask folder you just created. 
