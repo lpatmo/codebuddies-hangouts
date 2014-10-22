@@ -1,4 +1,4 @@
-We (all volunteers) are building a better Google Hangout scheduler tool for people who to find study partners and talk code/learn web development together. This application is built in python/flask. Anyone can contribute to this open-sourced project.
+We (all volunteers) are building a better Google Hangout scheduler tool for people who want to find study partners and learn web development together by screen sharing and talking code/talking about what they've built/working through coding exercises together. This application is built in flask, a light-weight web framework for python. Anyone can contribute to this open-sourced project.
 
 ##Background
 [http://www.codebuddies.org](http://www.codebuddies.org)
