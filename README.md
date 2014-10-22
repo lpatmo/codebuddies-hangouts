@@ -26,18 +26,10 @@ $ source bin/activate
 
 ###Fork the repo by clicking on the "fork" button on the upper right-hand corner. Next, run $git clone {{PATH}}.git on the repo you forked so that you can push to your own copy of the repo on your own github profile.
 
-Now you need to install a couple of dependencies within your app. Run the following: 
+Now you need to install a couple of dependencies within your app. After you $ cd into the 'app' directory, run the following: 
 
 ```
-$ pip install flask==0.10.1
-
-$ pip install wtforms
-
-$ pip install flask_wtf
-
-$ cd app
-
-$ python run.py
+$ pip install -r requirements.txt
 ```
 
 Remember to run ```$ git pull``` frequently. Please submit a pull request if you'd like to submit any changes.
