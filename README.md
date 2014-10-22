@@ -1,4 +1,4 @@
-We (all volunteers) are building a better Google Hangout scheduler tool for people who to find study partners and talk code/learn web development together. This application is built in python/flask. Anyone can contribute to this open-sourced project entirely run by volunteers.
+We (all volunteers) are building a better Google Hangout scheduler tool for people who to find study partners and talk code/learn web development together. This application is built in python/flask. Anyone can contribute to this open-sourced project.
 
 ##Background
 [http://www.codebuddies.org](http://www.codebuddies.org)
@@ -35,6 +35,11 @@ Now you need to install a couple of dependencies within your app. After you $ cd
 
 ```
 $ pip install -r requirements.txt
+```
+
+####To run the app, type the following and then copy/paste the resulting URL into your browser.
+```
+$ python run.py 
 ```
 
 Remember to run ```$ git pull``` frequently. Please submit a pull request if you'd like to submit any changes.
