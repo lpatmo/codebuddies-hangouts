@@ -1,3 +1,9 @@
+##UPDATE:
+We've switched over to this repo: https://github.com/lpatmo/cb. Please join us there! 
+
+Production URL: http://hangouts.codebuddies.org
+
+=====
 We (all volunteers) are building a better Google Hangout scheduler tool for people who want to find study partners and learn web development together by screen sharing and talking code/talking about what they've built/working through coding exercises together. This application is built in flask, a light-weight web framework for python. Anyone can contribute to this open-sourced project.
 
 ##Background
